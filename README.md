@@ -10,9 +10,9 @@ I am blatantly going to steal some of the concepts that [Patrick Hamann](https:/
 If your asking this question then please read [Mobile Analysis in PageSpeed Insights](https://developers.google.com/speed/docs/insights/mobile)
 
 ## No really.. Why?
-Why not? Its an experiment, I am definitely going to learn a lot by doing it. I really need a new website.. the current one sucks, it literally doesn't represent anything that I have learned in the last 3 years since putting it online. Alos, I have no doubt that this learning curve will help me loads when it comes to building my next application in react, angular or whatever.
+Why not? Experimentation is good, rewarding and fun. I really need a new website.. the current one sucks, it literally doesn't represent anything that I have learned in the last 3 years.
  
-But this isnt just an experiment.. I really do want to question everything, even the need for jQuery, underscore etc. Do we really need them? Whats possible without?   
+But this isnt just an experiment.. I really want to question everything, even the need for jQuery, underscore etc. Do we really need them? Whats possible without? I plan to push this to the limits, over and over again, to see what is possible in a single HTTP request. This will be an ongoing labour of love kind of project.   
 
 ## Goals
 
@@ -38,7 +38,7 @@ But this isnt just an experiment.. I really do want to question everything, even
 - May/May not use Grunt|Gulp
   
 ## Initial load
-I am not sure how harsh I want to be on this, I would prefer the entire site to load in a single http request. That means inline SVG, JS and CSS. YES, inline! just lol to that but super super fast.
+The aim is to load the entire app in a single http request. That means inline SVG, JS and CSS. YES, inline! just lol to that but super fast.
 
 ### Inline Pros
 - JS code would always be loaded and available in a specific order
@@ -58,16 +58,29 @@ When you only have 14 of them, this becomes even more important. It is my person
 Please do not add comments on this project like _use react and go 'native'_ The internet gods will smite your breakfast..
 
 # Questions and definitions
-- Does 14Kb mean 14Kb raw, or 14Kb gzipped?
-    - Tricky. Considering this is aimed at modern browsers, then I would say gzipped, but only if the browsers are versioned and checked that gzipped is definitely supported.
-- If Gzipped, which gzip level gets used by default? E.g. It is not acceptable for gzip level 9 to be used for measuring the 14Kb when Nginx uses level 5.
-    - Nginx = default = gzip_comp_level 1
-    - Apache = zlib default = zlib level 6
-    
 
-__consider pre gzipping the static file and throwing that out via nginx instead of incurring cpu costs on each request__
+# Gzipping
 
-- Considering the gzipping default rules I would state that gzip level 6 is used for determining the size of the static file in the build process. If I move to a pre processed gzip file, then level 9 will be used.
+By gzip compressing the static file, I will get extra bytes to play with in development. The amount of compression depends on the gzip compression level and I have found that at these small file sizes, there is only 61 bytes different between levels 6 and 9.
+
+For this reason, I have decided to go with gzip level 6 _(which balances speed and optimisation)_ 
+
+**Calculating developer bytes pre gzip compression**
+
+- I know that I must not exceed 14Kb in my HTTP request. 
+- I know that I am using gzip compression level 6
+
+So my question is. _How many bytes compresses into a 14Kb gzipped file?_
+
+Assuming that _14Kb is actually 14336 bytes_, The answer comes from chunking a suitable source file _(Thanks jquery)_ into an exact size, then gzipping that file and checking if it matches exactly 14336 bytes. After a few attempts we end up with this command and the magical number of **42960 bytes**.
+
+    rm x* && split -b 42960 jquery-1.12.2.js && gzip -6 xaa && stat -f%z xaa.gz
+
+This table shows the number of raw bytes passing through gzip level 6 to get our 14Kb output file.
+
+|Raw    | Level | Output | 
+|-------|------------|------|
+| 42960 |6| 14336|
 
 
 ## Build process

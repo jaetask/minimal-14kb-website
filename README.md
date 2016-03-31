@@ -12,7 +12,7 @@ If your asking this question then please read [Mobile Analysis in PageSpeed Insi
 ## No really.. Why?
 Why not? Experimentation is good, rewarding and fun. I really need a new website.. the current one sucks, it literally doesn't represent anything that I have learned in the last 3 years.
  
-But this isnt just an experiment.. I really want to question everything, even the need for jQuery, underscore etc. Do we really need them? Whats possible without? I plan to push this to the limits, over and over again, to see what is possible in a single HTTP request. This will be an ongoing labour of love kind of project.   
+But this isnt just an experiment.. I really want to question everything, even the need for jQuery, underscore etc. Do we really need them? Whats possible without? I plan to push this to the limits, over and over again, to see what is possible in a single (round trip) HTTP request. This will be an ongoing labour of love kind of project.   
 
 ## Goals
 

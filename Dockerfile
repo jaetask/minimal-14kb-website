@@ -1,1 +1,2 @@
-# This is a docker file :)
+FROM nginx
+COPY public /usr/share/nginx/html

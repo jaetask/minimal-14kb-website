@@ -24,6 +24,7 @@ If your asking this question then please read [Mobile Analysis in PageSpeed Insi
 - Must only support modern browsers..
     - MS don't support IE6/7/8/9 so why should I?
 - SVG images where possible, preferably inline.
+    - do we even need images? [See this video](https://www.youtube.com/watch?v=JSaMl2OKjfQ)
 - Must be fully unit tested
 - Can use JS templating if required, i.e. responding to new pages via ajax JSON response but templates MUST be compiled in build process. Never send a templating engine to the browser.
 - Must be built by CI, Jenkins, Travis etc
@@ -48,18 +49,38 @@ I am not sure how harsh I want to be on this, I would prefer the entire site to 
 # Every Kb counts
 When you only have 14 of them, this becomes even more important. It is my personal belief that developers have forgotten the value of a Kb. Especially when transmitted over a bad 3G connection, 50Kb can kill a user experience.
 
-# Broswer only
+# Browser only
 Please do not add comments on this project like _use react and go 'native'_ The internet gods will smite your breakfast..
 
 # Questions and definitions
 - Does 14Kb mean 14Kb raw, or 14Kb gzipped?
     - Tricky. Considering this is aimed at modern browsers, then I would say gzipped, but only if the browsers are versioned and checked that gzipped is definitely supported.
-- If Gzipped, which gzip level gets used by default? E.g. It is not acceptable for gzip level 9 to be used for measuring the 14Kb when NGinx uses level 5.
-    - NGinx
-    - Apache
+- If Gzipped, which gzip level gets used by default? E.g. It is not acceptable for gzip level 9 to be used for measuring the 14Kb when Nginx uses level 5.
+    - Nginx = default = gzip_comp_level 1
+    - Apache = zlib default = zlib level 6
     
-    
-## Building the docker file
+
+__consider pre gzipping the static file and throwing that out via nginx instead of incurring cpu costs on each request__
+
+- Considering the gzipping default rules I would state that gzip level 6 is used for determining the size of the static file in the build process. If I move to a pre processed gzip file, then level 9 will be used.
+
+
+## Build process
+
+### Compiling into a single static html file
+For the moment, I plan to compile the entire application into a single html file that when gzipped is &lt;= 14kb. I have yet to decide on the best way to compile into a single file. Considering this is a very simple project, I think that webpack is overkill, although I may be wrong about this and reverse the decision later. Its important to remember it doesnt matter what is used behind the scenes as long as the end product is tight.
+
+**What is needed?**
+- compile and optimize SVG image(s) into page
+- concat &amp; minify CSS into a single text block
+- concat &amp; minify JS into a single text block
+- inject CSS code block into page header
+- inject JS code block into page footer
+
+**Do we need NPM?**
+Maybe.. I dont see the project needing many components, so keeping them up to date as a manual process might be better.. who knows.. 
+
+### Building the docker file
 I am going to assume you are already familiar with docker so should be comfortable running this command.
 
     docker build -t <username>/website
@@ -67,4 +88,6 @@ I am going to assume you are already familiar with docker so should be comfortab
     docker push <username>/website    
 
 This will create a docker image that can be hosted wherever you normally do that.
+
+
  

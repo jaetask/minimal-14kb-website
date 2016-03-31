@@ -9,6 +9,11 @@ I am blatantly going to steal some of the concepts that [Patrick Hamann](https:/
 ## Why 14Kb?
 If your asking this question then please read [Mobile Analysis in PageSpeed Insights](https://developers.google.com/speed/docs/insights/mobile)
 
+## No really.. Why?
+Why not? Its an experiment, I am definitely going to learn a lot by doing it. I really need a new website.. the current one sucks, it literally doesn't represent anything that I have learned in the last 3 years since putting it online. Alos, I have no doubt that this learning curve will help me loads when it comes to building my next application in react, angular or whatever.
+ 
+But this isnt just an experiment.. I really do want to question everything, even the need for jQuery, underscore etc. Do we really need them? Whats possible without?   
+
 ## Goals
 
 - Website in <= 14Kb
@@ -24,7 +29,7 @@ If your asking this question then please read [Mobile Analysis in PageSpeed Insi
 - Must only support modern browsers..
     - MS don't support IE6/7/8/9 so why should I?
 - SVG images where possible, preferably inline.
-    - do we even need images? [See this video](https://www.youtube.com/watch?v=JSaMl2OKjfQ)
+    - do I even need images? [See this video](https://www.youtube.com/watch?v=JSaMl2OKjfQ)
 - Must be fully unit tested
 - Can use JS templating if required, i.e. responding to new pages via ajax JSON response but templates MUST be compiled in build process. Never send a templating engine to the browser.
 - Must be built by CI, Jenkins, Travis etc
@@ -77,7 +82,7 @@ For the moment, I plan to compile the entire application into a single html file
 - inject CSS code block into page header
 - inject JS code block into page footer
 
-**Do we need NPM?**
+**Do I need NPM?**
 Maybe.. I dont see the project needing many components, so keeping them up to date as a manual process might be better.. who knows.. 
 
 ### Building the docker file

@@ -82,6 +82,8 @@ This table shows the number of raw bytes passing through gzip level 6 to get our
 |-------|------------|------|
 | 42960 |6| 14336|
 
+## Responsive CSS Layouts
+I have chosen the excellent [PocketGrid](http://arnaudleray.github.io/pocketgrid/) library which gives responsive grid ability at just 500 bytes. I will add a CSS pre processor that minifies all of the css together into a single text block and injects it into the index.html template.
 
 ## Build process
 

@@ -1,0 +1,28 @@
+{
+  "name": "minimal-14k-website",
+  "version": "0.0.1",
+  "description": "Find out what is possible in a single HTTP request round trip",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaetask/minimal-14kb-website.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaetask/minimal-14kb-website/issues"
+  },
+  "homepage": "https://github.com/jaetask/minimal-14kb-website#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-uglifycss": "^1.0.6",
+    "uglifycss": "0.0.20"
+  }
+}

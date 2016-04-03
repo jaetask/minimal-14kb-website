@@ -22,7 +22,7 @@ gulp.task('build-md', function() {
 	return gulp.src(['src/content/index.md'])
 		.pipe(wrapMD('contentIndex'))
 		.pipe(concat('content.js'))
-		.pipe(gulp.dest('build', {overwrite: true}));
+		.pipe(gulp.dest('build'));
 });
 
 gulp.task('build-js', function() {
@@ -41,7 +41,7 @@ gulp.task('build-js', function() {
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('html-compile', ['build-css', 'build-md', 'build-js'], function() {
+gulp.task('html-compile', function() {
 	return gulp.src('src/html/index.html')
 		.pipe(replace('{{CSS}}', '<style>'+fs.readFileSync('build/compiled.css', 'utf8')+'</style>'))
 		.pipe(replace('{{DATA}}', '<script>'+fs.readFileSync('build/content.js', 'utf8')+'</script>'))
@@ -50,7 +50,7 @@ gulp.task('html-compile', ['build-css', 'build-md', 'build-js'], function() {
 });
 
 gulp.task('clean', function() {
-	return del(['build']);
+	return del.sync(['build']);
 });
 
-gulp.task('default', ['clean','html-compile']);
+gulp.task('default', ['clean', 'build-md', 'build-css', 'build-js', 'html-compile']);

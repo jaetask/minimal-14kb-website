@@ -1,5 +1,19 @@
 /**
  * Style sheet for the app, this will get added after responsive library.
  */
+:root {
+    --main-color: #ADB1A4;
+}
 
-body {background-color: white;}
+body {background-color: #eee; color: #222; font-family: sans-serif;}
+body, header, footer, h1, h2, h3, h4 {display: block; margin: 0; padding: 0;}
+.wrapper {margin-left: auto; margin-right: auto;}
+.header {background-color: #1F1C1E; color: var(--main-color);}
+.head1, .head2 {width: 100%; padding-left: 3em;}
+.header-nav {background-color: var(--main-color);}
+.header h1 {padding-top: 0.8em;}
+.header h2 {padding-bottom: 0.8em;}
+.head2 {display: block; height: 3em; line-height: 3em;}
+.app, footer {background-color: white; padding: 2em;}
+
+

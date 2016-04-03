@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "gulp",
-    "build": "npm run compile && stat -f%z public/index.html && stat -f%z public/index.html.gz"
+    "all-things": "gulp clean && gulp build-md && gulp build-css && gulp build-js && gulp html-compile",
+    "build": "npm run all-things && stat -f%z public/index.html && stat -f%z public/index.html.gz"
   },
   "repository": {
     "type": "git",
@@ -33,10 +34,9 @@
     "gulp-wrap": "^0.11.0",
     "gulp-wrap-js": "^0.4.1",
     "gutil": "^1.6.4",
+    "micromarkdown": "^0.3.4-a",
     "through2": "^2.0.1",
     "uglifycss": "0.0.20"
   },
-  "dependencies": {
-    "micromarkdown": "https://github.com/jaetask/micromarkdown.js"
-  }
+  "dependencies": {}
 }

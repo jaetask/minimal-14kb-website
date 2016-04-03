@@ -14,7 +14,7 @@ function convertToStrings(contents) {
 		.toString('utf8')
 		.split("\n")
 		.filter(function(line) {
-			return line.length > 0;
+			return true;//line.length > 0;
 		})
 		.map(function(line) {
 			return '\t"'+line+'"'

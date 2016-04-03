@@ -39,9 +39,9 @@ function gulpPrefixer(varName) {
 		}
 		if (file.isBuffer()) {
 			file.contents = Buffer.concat([
-				new Buffer('var page = {\n\tcontent: [\n'),
-				convertToStrings(file.contents),
-				new Buffer('\n\t]\n};')
+				new Buffer('var page = {\n\tcontent: "'),
+				new Buffer(file.contents.toString().replace(/\n/g,'\\n')),
+				new Buffer('"\n};')
 			]);
 		}
 

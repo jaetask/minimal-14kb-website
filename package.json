@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "gulp",
+    "gzip": "gzip -9kf public/index.html",
     "all-things": "gulp clean && gulp build-md && gulp build-css && gulp build-js && gulp html-compile",
-    "build": "npm run all-things && stat -f%z public/index.html && stat -f%z public/index.html.gz"
+    "build": "npm run all-things && npm run gzip && stat -f%z public/index.html && stat -f%z public/index.html.gz"
   },
   "repository": {
     "type": "git",

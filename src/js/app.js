@@ -21,13 +21,7 @@ var minimalWebsite = {
 	}
 };
 
-var convertContentLinesToHtml = function convertContentLinesToHtml(lines) {
-	return micromarkdown.parse(lines.join('\n'));
-};
-
-minimalWebsite.render(document.getElementsByClassName('app')[0], convertContentLinesToHtml(page.content));
-
+minimalWebsite.render(document.getElementsByClassName('app')[0], marked(page.content));
 
 performance.mark('app-end');
-
 performance.measure('app','app-begin','app-end');

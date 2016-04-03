@@ -4,9 +4,10 @@ var gulp = require('gulp'),
 		del = require('del'),
 		fs = require('fs'),
 		replace = require('gulp-replace'),
+		uglify = require('gulp-uglify'),
 		uglifyCss = require('gulp-uglifycss');
 
-// compile all the css into a single file
+
 gulp.task('build-css', function() {
 	return gulp.src(['src/css/pocketgrid.css','src/css/app.css'])
 		.pipe(uglifyCss({"uglyComments": true}))
@@ -15,10 +16,25 @@ gulp.task('build-css', function() {
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('html-compile', ['build-css'], function() {
+gulp.task('build-js', function() {
+	return gulp.src([
+			'node_modules/scriptjs/dist/script.js',       // RequireJS replacement
+			//'node_modules/bullet-pubsub/dist/bullet.js',  // PubSub event bus 1.4K gzipped
+			'node_modules/bullet-pubsub/dush/index.js',   // PubSub event bus - 828 bytes gzipped
+			'node_modules/rlite-router/rlite.js',         // Page Routing
+			'node_modules/domchanger/domchanger.js',      // React style DOM components
+			//'node_modules/j140/index.js',      // String template engine
+
+		])
+		.pipe(uglify({"uglyComments": true}))
+		.pipe(concat('compiled.js'))
+		.pipe(gulp.dest('build'));
+});
+
+gulp.task('html-compile', ['build-css', 'build-js'], function() {
 	return gulp.src('src/html/index.html')
 		.pipe(replace('{{CSS}}', '<style>'+fs.readFileSync('build/compiled.css', 'utf8')+'</style>'))
-		.pipe(replace('{{JS}}', '/** INJECT JS HERE! */'))
+		.pipe(replace('{{JS}}', '<script>'+fs.readFileSync('build/compiled.js', 'utf8')+'</script>'))
 		.pipe(gulp.dest('public'));
 });
 

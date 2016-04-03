@@ -26,5 +26,8 @@
     "gulp-uglify": "^1.5.3",
     "gulp-uglifycss": "^1.0.6",
     "uglifycss": "0.0.20"
+  },
+  "dependencies": {
+    "micromarkdown": "https://github.com/jaetask/micromarkdown.js"
   }
 }

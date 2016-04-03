@@ -97,17 +97,40 @@ For the moment, I plan to compile the entire application into a single html file
 - inject CSS code block into page header
 - inject JS code block into page footer
 
-**Do I need NPM?**
-Maybe.. I dont see the project needing many components, so keeping them up to date as a manual process might be better.. who knows.. 
 
-### Building the docker file
-I am going to assume you are already familiar with docker so should be comfortable running this command.
+## Markdown
+I have decided to use markdown s the base format for storing page content. I will transmit markdown to the page via JSON and provide some kind of content switching mechanism. The only problem is that the two markdown JavaScript libraries I have found come in at around 5Kb when gzipped. As amazing as it is, that's 35% of my available 14Kb limit. 
 
-    docker build -t <username>/website
-   
-    docker push <username>/website    
+I have decided to fork the excellent project [Micro Markdown](https://github.com/SimonWaldherr/micromarkdown.js) and to cut out as much code as possible to reduce the footprint. I am also considering removing some of the markdown features that I never use, such as horizontal lines and tables. But we'll see.. 
 
-This will create a docker image that can be hosted wherever you normally do that.
+## Realisations
+
+### Blog
+I have realised that this project should be a blog, or a series of articles. If I try to document everything in this file then it is going to get very large but also, People wont be able to see my mistakes. I think its only fair that if I head in a particular direction and it doesn't work, then what it should be documented.. what I did, why it didn't work and what I did next.
+
+So that's my plan for this week. Document where I am at so far, write an app to deliver it to the browser and convert it client side into markdown. The funny thing about this is that I am already breaking my rule 'Never send a templating language to the browser' Progress :)
+
+### Rendering
+Markdown is really just a text processor, it takes some input and transforms it into an output. The output depends on the abilities within the processor. Which has got me thinking.. Not all pages will need all the capabilities of a markdown processor, but some pages will need them. So, how about each ability being a plugin to a text processor and when all abilities are added together, we get a full markdown compatible text processor.
+
+This would mean that we can unpack markdown features into local storage, and save on bytes across the wire, it means that the 'tables' ability can be loaded only when needed and reduces the size of markdown in general.
+
+It also means that other processors could be added later, such as jade, mustache or whatever, I could literally mix and match whatever I want into a pluggable text processor on a need by need basis. 
+
+Its an interesting thought and one I would like to follow at a later date.
+  
+
+## Interesting projects of note
+I have come across a community of developers who try and solve problems in a single tweet. 140 characters is all you get to provide a feature. I love this concept and plan to add whatever I can to it. massive interweb win. 
+
+- "bullet-pubsub": "^2.2.1",
+- "domchanger": "^1.0.2",
+- "dush": "^1.3.0",
+- "j140": "^2.0.0",
+- "rlite-router": "^1.1.3",
+- "scriptjs": "^2.5.8"
+  
 
 
- 
+
+  

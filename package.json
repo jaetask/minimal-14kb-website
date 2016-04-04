@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "gulp",
     "gzip": "gzip -9kf public/index.html",
-    "all-things": "gulp clean && gulp build-md && gulp build-css && gulp build-js && gulp html-compile",
+    "all-things": "gulp clean && gulp build-md && gulp build-css && ./node_modules/.bin/cjsc ./src/js/app.js -o ./build/script.js --debug && gulp build-js && gulp html-compile",
     "build": "npm run all-things && npm run gzip && stat -f%z public/index.html && stat -f%z public/index.html.gz"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/jaetask/minimal-14kb-website#readme",
   "devDependencies": {
     "chunknlines": "^0.1.1",
+    "cjsc": "^1.0.7",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",

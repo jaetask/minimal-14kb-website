@@ -31,12 +31,13 @@ gulp.task('build-js', function() {
 			//'node_modules/bullet-pubsub/dist/bullet.js',  // PubSub event bus 1.4K gzipped
 			//'node_modules/bullet-pubsub/dush/index.js',   // PubSub event bus - 828 bytes gzipped
 			//'node_modules/rlite-router/rlite.js',         // Page Routing
-			//'node_modules/domchanger/domchanger.js',      // React style DOM components
+			'node_modules/domchanger/domchanger.js',      // React style DOM components
 			//'node_modules/j140/index.js',                 // String template engine
 			//'node_modules/micromarkdown/micromarkdown.js',  // not sure about this..
 			'node_modules/marked/lib/marked.js',  // not sure about this..
 
-			'src/js/app.js'
+			'build/script.js',
+			//'src/js/app.js'
 		])
 		.pipe(uglify({"uglyComments": true}))
 		.pipe(concat('compiled.js'))

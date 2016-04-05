@@ -15,11 +15,21 @@ There are many reasons for why a site in <= 14Kb but some of the main ones are
 
 All of which led me to the conclusion that the fastest possible app, must be one that is limited to a single HTTP round trip. This is currently around 16Kb (actually 14Kb when headers overhead removed). I mean, you literally cant get faster than an app that makes one round trip request and runs. Everything it needs, including css, javascript, images all compiled (in real time or not) into a single html bundle.
 
+Plus, I really like the idea of a physical restriction, the app is determined by the ability of recent unix kernels to deliver 10 packets before waiting for an acknowledgement. This is the physical limit, the boundary.. Now I want to find out exactly hat is possible within that. 
+
 # I am not the only one
-I started thinking it would just be me, playing around with optimized or stripped down libraries just extracting what I need so it all compiled into 14Kb. But when I started looking around for modules to help and came across some really cool projects. 
+I started thinking it would just be me, playing around with optimized or stripped down libraries just extracting what I need so it all compiled into 14Kb. But when I started looking around for modules to help and came across some really cool projects and people who are also thinking differently, not everyone wants to load 600Kb and start typing.
 
 _Disclaimer: I haven't finished this project yet so this list is a work in progress_
 
+### Other communities
+The interweb is full of people who do crazy things. Here are some of them.
+
+- Javascript apps in 140 bytes: [140Bytes](https://github.com/jed/140bytes/wiki/Byte-saving-techniques)
+> This is such a cool community, they try to solve common JS problems in a tweet.
+
+- Games: [JS 13K Games](http://js13kgames.com/)
+> Incredibly fun website and competition to build the best game in 13Kb.
 
 Basically, I have realised that just starting is not always the best thing to do and that spending a few weeks with the following projects will really help. I've been on large scale projects before that failed because they started too quickly.  
 

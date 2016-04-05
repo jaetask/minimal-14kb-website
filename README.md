@@ -34,6 +34,8 @@ The interweb is full of people who do crazy things. Here are some of them.
 - Games: [JS 13K Games](http://js13kgames.com/)
 > Incredibly fun website and competition to build the best game in 13Kb.
 
+## So how am I going to do it?
+
 Basically, I have realised that just starting is not always the best thing to do and that spending a few weeks with the following projects will really help. I've been on large scale projects before that failed because they started too quickly.  
 
 - Responsive: [PocketGrid](http://arnaudleray.github.io/pocketgrid/)

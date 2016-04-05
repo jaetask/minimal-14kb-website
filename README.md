@@ -20,7 +20,6 @@ Plus, I really like the idea of a physical restriction, the app is determined by
 # I am not the only one
 I started thinking it would just be me, playing around with optimized or stripped down libraries just extracting what I need so it all compiled into 14Kb. But when I started looking around for modules to help and came across some really cool projects and people who are also thinking differently, not everyone wants to load 600Kb and start typing.
 
-_Disclaimer: I haven't finished this project yet so this list is a work in progress_
 
 ### Other communities
 The interweb is full of people who do crazy things. Here are some of them.
@@ -56,6 +55,9 @@ Basically, I have realised that just starting is not always the best thing to do
 - Bundling: [Webpack](https://webpack.github.io/)
 > I have never used it in anger but reading up on [Single page modules with webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html) and how to use the [CommonsChunk Plugin](http://jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/) makes me realise that it might actually be quite easy to chunk up a SPA into single request pieces and load them into the browser as a user moves around the site (routes).
 > _I know this is marked as bundling but the multi chunking capabilities might actually be the one thing that makes this whole concept work. I do have concerns about how to cleanup when switching one page for another._
+
+
+_Disclaimer: I haven't finished this project yet so this list is a work in progress_
 
 
 # Ramp up JavaScript

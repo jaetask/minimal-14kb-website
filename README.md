@@ -30,7 +30,7 @@ Basically, I have realised that just starting is not always the best thing to do
 > This project really got me wondering why react was 600Kb. I mean, it does something very similar (without JSX) and it does it in 10Kb. Amazing but there are a few issues which might require my attention. During a look at it i found an article pointing me to [domvm](https://github.com/leeoniya/domvm), so I also looked at that.
 
 - Components: [Domvm](https://github.com/leeoniya/domvm)
-> Seriously impressive little application. Similar to [Domchanger](https://github.com/creationix/domchanger) but with a subtle shift or two. Check out [The Demos](https://leeoniya.github.io/domvm/demos/)
+> Seriously impressive little application. Similar to [Domchanger](https://github.com/creationix/domchanger) but with a subtle shift or two.. Check out the [Demos](https://leeoniya.github.io/domvm/demos/).
 
 
 - Bundling: [Webpack](https://webpack.github.io/)

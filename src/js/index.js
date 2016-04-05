@@ -23,6 +23,9 @@ var navHeader = require('./nav-header.js');
 var navSidebar = require('./nav-sidebar.js');
 */
 
+
+/*
+
 domChanger(FilterableProductTable, document.getElementsByClassName('app')[0]).update([
 	{category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
 	{category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
@@ -142,3 +145,5 @@ function ProductRow() {
 	}
 }
 exports.name = "main";
+
+	*/

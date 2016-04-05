@@ -39,5 +39,18 @@
  */
 
 
-require('./index.js');
+//require('./index.js');
+performance.mark('app-begin');
+
+var minimalWebsite = {
+	render: function(element, content) {
+		element.innerHTML = content;
+	}
+};
+
+minimalWebsite.render(document.getElementsByClassName('app')[0], marked(page.content));
+
+performance.mark('app-end');
+performance.measure('app','app-begin','app-end');
+
 exports.name = "app";

@@ -1,56 +1,25 @@
 ## Single Request Application - My CV
 
-### I imagine the app to work something like this..
+>   To deliver a fully responsive, modern, component based, multi page content, single page application in <= 14Kb gzipped.
 
-There is a *base weight* for a page. This is made up of the main html template, the base CSS and the main JavaScript application. Lets say this is 20Kb raw, leaving 20Kb raw for each page to play with. 
+When I started this project I thought I would be the only one thinking that even though frameworks like Angular and React are amazing.. They are incredibly heavy. I mean like +600Kb heavy. I have recently really started to question the size of these projects, especially when I heard that some people are using react as the view in angular. That has to be a 1Mb page weight before you've even types a single line of code.
 
-#### Routing
-You land at the index page and you get the full application in a single hit. One all inclusive HTTP response. Then you click on /about and it loads just the JSON content for the about page into the current page and swaps out the page content. If you go directly in a browser to /about then you get the full html application but loaded with the /about content instead of the index content.
+Insanity.. Give me all the toys.. 
 
-This means any JSON page content can be delivered raw, or wrapped in the html application.
+There is also a very interesting performance based shift happening in google rankings. 
 
-It also means then we we request the RAW JSON version of a page, it will be less than 14Kb and we can also stuff in other components that can be saved into the browser for later use..
-
-By having the abilities in the browser, we reduce the size of requests even further and can then load more abilities into the browser. This allows feature upscaling as the app is used.
+All of which led me to the conclusion that the fastest possible app, must be one that is limited to a single HTTP round trip. This is currently around 16Kb (actually 14Kb when headers overhead removed)
  
+I mean, you literally cant get faster than an app that makes one round trip request and runs. Everything it needs, including css, javascript, images all compiled (in real time or not) into a single html bundle.
 
-## It doesn't do anything
-That's because I am only a few days into this project. My current thoughts and plans are:
+# I am not the only one
+I started thinking it would just be me, playing around with optimized or stripped down libraries just extracting what I need so it all compiled into 14Kb. But they I started looking around for modules to help and came across some really cool projects. 
 
-- Client side caching of JavaScript & CSS chunks
-- Client side routing for full single page app experience
-- Media queries to change page layouts on mobile & tablet
-- Expanding page JSON structure to allow sending JavaScript & CSS as well as Markdown
-- Add a backend api to deliver page content 
-- Pre-load useful chunks such as syntax highlighting
-- Write full JavaScript applications and games within a single request app
-    
+_Disclaimer: I haven't finished this project yet so this list is a work in progress_
 
 
 
 
 
 
-## A modern website in &lt;= 14Kb
-This website loads in a single page request. In fact it loads in less than that. There are no external dependencies, no external images, no css files, no javascript files.. nothing. And what's crazy is that this is a fully responsive, modern, client side, JavaScript single page application that supports routing, a blog, Markdown page content.
-
-And yes.. It's [open source via github](https://github.com/jaetask/minimal-14kb-website). 
-
-### Why 14Kb?
-If your asking this question then please read [Mobile Analysis in PageSpeed Insights](https://developers.google.com/speed/docs/insights/mobile)
-
-### No really.. Why?
-There are many reasons for this so I will try to list them out along with reference material.
-
-* I want to question everything about the way we build JS apps
-* [You dont need jQuery](https://github.com/oneuijs/You-Dont-Need-jQuery)
-* [You dont need underscore](https://github.com/cht8687/You-Dont-Need-Lodash-Underscore)
-* If an app is fast on mobile, you get fast desktop for free
-* It's not mobile first.. It's now mobile only.
-* Single request applications are very fast! I am seeing DomContentLoaded times arouns 20ms and Render complete around 50ms
-* React is very trendy but It's 670Kb
-* Angular is very trendy but its &gt; 500Kb
-* I want to continuously improve this project to push the boundaries of whats possible in a modern browser.
-
-
-```js\n console.log('hello'); \n```
+ 

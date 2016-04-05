@@ -40,6 +40,18 @@ Basically, I have realised that just starting is not always the best thing to do
 > _I know this is marked as bundling but the multi chunking capabilities might actually be the one thing that makes this whole concept work. I do have concerns about how to cleanup when switching one page for another._
 
 
+# Ramp up JavaScript
+There is no doubt that a couple of years contracting back in PHP has affected my JavaScript skills, abilities and sharpness. I am not happy about that and am currently taking time out to get back up to speed. This project will sharpen me but also I am
+
+- Taking a Lifetime Access membership to [Eric Elliot's Online training](https://ericelliottjs.com/) 
+> This course is actually amazing. The two hour lecture on ES6 was worth its weight in gold, every feature covered, in detail with examples of ES5 > ES6 along with a github repo for later analysis.
+
+- Reading [the You dont know JS](http://www.amazon.co.uk/s/ref=nb_sb_noss_2?url=search-alias%3Dstripbooks&field-keywords=You+dont+know+JS) series by [Kyle Simpson](http://www.oreillynet.com/pub/au/4853)
+> The force is strong with kyle. These books go into details unknown to mere mortals.
+
+- Reading [Programming JavaScript Applications](http://shop.oreilly.com/product/0636920033141.do) by Eric Elliot
+> Rather than highlighting syntax, Eric goes right into the inners of writing real applications in JavaScript. 
+
 
 
 

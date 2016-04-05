@@ -49,6 +49,10 @@ Basically, I have realised that just starting is not always the best thing to do
 - Components: [Domvm](https://github.com/leeoniya/domvm)
 > Seriously impressive little application. Similar to [Domchanger](https://github.com/creationix/domchanger) but with a subtle shift or two.. Check out the [Demos](https://leeoniya.github.io/domvm/demos/).
 
+
+- Components: [Inferno](https://github.com/trueadm/inferno)
+> Seriously impressive and fast react style UI library, can handle isomorphic with an additional server component, but.. It's 8.1Kb which makes a huge dent in my budget. Its the faster app apart from canvas in the [DbMonster](http://mathieuancelin.github.io/js-repaint-perfs/) challenge.
+
 - Markdown: [Marked](https://github.com/chjj/marked)
 > I am considering only ever sending markdown to the browser when page content is required. There are a few markdown libraries but this one seams to be the fastest. Also, if this was a proper app with a web UI and admins editing content then markdown editors are very good at providing content consistency. The kind of content that can still be used after a reskin of the site. #bonus
 

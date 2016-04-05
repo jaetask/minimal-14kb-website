@@ -26,7 +26,10 @@ _Disclaimer: I haven't finished this project yet so this list is a work in progr
 The interweb is full of people who do crazy things. Here are some of them.
 
 - Javascript apps in 140 bytes: [140Bytes](https://github.com/jed/140bytes/wiki/Byte-saving-techniques)
-> This is such a cool community, they try to solve common JS problems in a tweet.
+> This is such a cool community, they try to solve common JS problems in a tweet. 
+
+- Tetris: [Binary Tetris in 140 bytes](https://gist.github.com/aemkei/1672254)
+> This is one of my favourite 140 bytes examples. So creative..
 
 - Games: [JS 13K Games](http://js13kgames.com/)
 > Incredibly fun website and competition to build the best game in 13Kb.

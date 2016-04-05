@@ -13,6 +13,25 @@ All of which led me to the conclusion that the fastest possible app, must be one
 I mean, you literally cant get faster than an app that makes one round trip request and runs. Everything it needs, including css, javascript, images all compiled (in real time or not) into a single html bundle.
 
 # I am not the only one
-I started thinking it would just be me, playing around with optimized or stripped down libraries just extracting what I need so it all compiled into 14Kb. But they I started looking around for modules to help and came across some really cool projects. 
+I started thinking it would just be me, playing around with optimized or stripped down libraries just extracting what I need so it all compiled into 14Kb. But when I started looking around for modules to help and came across some really cool projects. 
 
 _Disclaimer: I haven't finished this project yet so this list is a work in progress_
+
+
+Basically, I have realised that just starting is not always the best thing to do and that spending a few weeks with the following projects will really help. I've been on large scale projects before that failed because they started too quickly.  
+
+- [Page JS](https://visionmedia.github.io/page.js/) The tagline reads 'Tiny ~1200 byte Express-inspired client-side router.' but its actually around 4Kb when minified and Gzipped. 
+> This is a fantastic piece of coding, it does every possible thing you would want in a router and I would love to use it but I would strip out lots of ts features which means taking ownership. I would prefer a compiled approach to this module. I mean, how many people use more than one routing system in their application at a time?
+
+- [Domchanger](https://github.com/creationix/domchanger)
+> This project really got me wondering why react was 600Kb. I mean, it does something very similar (without JSX) and it does it in 10Kb. Amazing but there are a few issues which might require my attention. During a look at it i found an article pointing me to [domvm](https://github.com/leeoniya/domvm), so I also looked at that.
+
+- [Domvm](https://github.com/leeoniya/domvm)
+> Seriously impressive little application. Similar to [Domchanger](https://github.com/creationix/domchanger) but with a subtle shift or two.
+
+
+- [Webpack](https://webpack.github.io/)
+> I have never used it in anger but reading up on [Single page modules with webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html) and how to use the [CommonsChunk Plugin](http://jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/) makes me realise that it might actually be quite easy to chunk up a SPA into single request pieces and load them into the browser as a user moves around the site (routes).
+
+
+

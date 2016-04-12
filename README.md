@@ -36,6 +36,10 @@ The interweb is full of people who do crazy things. Here are some of them.
 
 Basically, I have realised that just starting is not always the best thing to do and that spending a few weeks with the following projects will really help. I've been on large scale projects before that failed because they started too quickly.  
 
+### The Contenders..
+I have been playing with all of the following libraries so that I can better evaluate the best way to write the application.
+
+
 - Responsive: [PocketGrid](http://arnaudleray.github.io/pocketgrid/)
 > What a project, it provides a fully responsive grid layout ability (mobile ready be default) and in just 300 bytes gzipped.
 
@@ -54,6 +58,9 @@ Basically, I have realised that just starting is not always the best thing to do
 
 - Components: [Inferno](https://github.com/trueadm/inferno)
 > Seriously impressive and fast react style UI library, can handle isomorphic with an additional server component, but.. It's 8.1Kb which makes a huge dent in my budget. Its the fastest app apart from canvas in the [DbMonster](http://mathieuancelin.github.io/js-repaint-perfs/) challenge but its lacking documentation, It's JSX based _Can be used without JSX but all of the examples use it_. For these reasons I have decided to skip inferno.
+
+- Immutability: [Seamless Immutable](https://github.com/rtfeldman/seamless-immutable)
+> I have been learning about [ImmutableJS](https://facebook.github.io/immutable-js/docs/#/) and really like this way of thinking but it's 16Kb gzipped. Then I discovered a really good article on [Switching from immutable.js to seamless-immutable](http://tech.noredink.com/post/107617838018/switching-from-immutablejs-to-seamless-immutable). I haven't worked with this yet, I plan to get into that tomorrow but this library is just 1.6Kb gzipped which makes it a very good contender. 
 
 - Markdown: [Marked](https://github.com/chjj/marked)
 > I am considering only ever sending markdown to the browser when page content is required. There are a few markdown libraries but this one seams to be the fastest. Also, if this was a proper app with a web UI and admins editing content then markdown editors are very good at providing content consistency. The kind of content that can still be used after a reskin of the site. #bonus

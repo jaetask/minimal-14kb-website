@@ -29,7 +29,6 @@ The interweb is full of people who do crazy things. Here are some of them.
 
 - Tetris: [Binary Tetris in 140 bytes](https://gist.github.com/aemkei/1672254)
 > This is one of my favourite 140 bytes examples. So creative..
-
 - Games: [JS 13K Games](http://js13kgames.com/)
 > Incredibly fun website and competition to build the best game in 13Kb.
 
@@ -39,6 +38,9 @@ Basically, I have realised that just starting is not always the best thing to do
 
 - Responsive: [PocketGrid](http://arnaudleray.github.io/pocketgrid/)
 > What a project, it provides a fully responsive grid layout ability (mobile ready be default) and in just 300 bytes gzipped.
+
+- Responsive: [Flex grid](http://caniuse.com/#search=flex)
+> it may be more efficient not to use PocketGrid and to use the widely supported flex grid model. This may save 300 bytes on the library, see [This excellent example for details](https://philipwalton.github.io/solved-by-flexbox/demos/grids/)
 
 - Routing: [Page JS](https://visionmedia.github.io/page.js/) The tagline reads 'Tiny ~1200 byte Express-inspired client-side router.' but its actually around 4Kb when minified and Gzipped. 
 > This is a fantastic piece of coding, it does every possible thing you would want in a router and I would love to use it but I would strip out lots of ts features which means taking ownership. I would prefer a compiled approach to this module. I mean, how many people use more than one routing system in their application at a time?

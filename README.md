@@ -69,6 +69,8 @@ I have been playing with all of the following libraries so that I can better eva
 > I have never used it in anger but reading up on [Single page modules with webpack](http://dontkry.com/posts/code/single-page-modules-with-webpack.html) and how to use the [CommonsChunk Plugin](http://jonathancreamer.com/advanced-webpack-part-1-the-commonschunk-plugin/) makes me realise that it might actually be quite easy to chunk up a SPA into single request pieces and load them into the browser as a user moves around the site (routes).
 > _I know this is marked as bundling but the multi chunking capabilities might actually be the one thing that makes this whole concept work. I do have concerns about how to cleanup when switching one page for another._
 
+- Event: [Smoke Signal](https://github.com/StephanHoyer/smoke-signal)
+> I have used Bullet _1.6Kb gzipped_ in the past to allow inter module communication in the browser. This technique is very effective for keeping page components separate while still allowing module communication. I have just stumbled across another project that comes in at just _264 bytes gzipped_, it appears to have the same features as bullet and I can extend if I need multi channel eventing.
 
 _Disclaimer: I haven't finished this project yet so this list is a work in progress_
 
